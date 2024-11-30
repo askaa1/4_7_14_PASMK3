@@ -5,63 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Food Ordering UI - Halaman 2</title>
+    <script defer src="{{ asset('java.js') }}"></script>
 </head>
-<body class="m-0 p-0 font-sans bg-gray-200">
+<body class="m-0 p-0 font-sans bg-gray-100">
     <div class="grid grid-cols-[70px_auto] h-screen">
         <!-- Sidebar -->
-        <aside class="bg-gray-800 flex flex-col items-center py-2">
-            <div class="menu space-y-5">
-                <div class="icon text-white text-2xl cursor-pointer">🏠</div>
-                <div class="icon text-white text-2xl cursor-pointer">👤</div>
-                <div class="icon text-white text-2xl cursor-pointer">⭐</div>
+        <aside class="bg-gradient-to-b from-gray-800 to-gray-700 flex flex-col items-center py-2 shadow-lg">
+            <div class="menu space-y-6">
+                <div class="icon text-white text-2xl cursor-pointer hover:text-gray-300 transition duration-200">🏠</div>
+                <div class="icon text-white text-2xl cursor-pointer hover:text-gray-300 transition duration-200">👤</div>
+                <div class="icon text-white text-2xl cursor-pointer hover:text-gray-300 transition duration-200">⭐</div>
             </div>
         </aside>
 
         <!-- Main Content -->
         <main class="flex flex-col bg-white">
             <!-- Header -->
-            <header class="p-5 bg-gray-100 shadow">
-                <input type="text" class="w-full p-2 border border-gray-300 rounded" placeholder="Search...">
+            <header class="p-5 bg-gray-200 shadow-md">
+                <input type="text" 
+                       class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400" 
+                       placeholder="Search for your favorite food...">
             </header>
 
             <!-- Banner -->
-            <section class="relative flex justify-center items-center p-5">
-                <div class="absolute top-5 left-5 bg-red-500 text-white py-1 px-3 rounded text-lg">
-                    30% Off
-                </div>
-                <img src="asset/download (29).jpeg" alt="Burger" class="w-full max-w-md rounded-lg">
-            </section>
+<section class="relative flex justify-center items-center p-5">
+    <img src="{{ asset('asset/burger.jpeg') }}" alt="Burger Promo" class="w-full max-w-md rounded-lg">
+</section>
+
 
             <!-- Tabs -->
+
             <nav class="flex justify-center bg-gray-200 py-3">
-                <a href="hal1.html" class="px-5 py-2 mx-2 rounded hover:bg-gray-300">Checkout</a>
-                <a href="hal2.html" class="px-5 py-2 mx-2 rounded bg-gray-800 text-white">Nearby</a>
-                <a href="hal3.html" class="px-5 py-2 mx-2 rounded hover:bg-gray-300">Promotion</a>
-                <a href="hal4.html" class="px-5 py-2 mx-2 rounded hover:bg-gray-300">Newcomers</a>
-                <a href="hal5.html" class="px-5 py-2 mx-2 rounded hover:bg-gray-300">Best Seller</a>
-            </nav>
+    <a id="tabCheckout" href="{{ route('hal1') }}" class="px-5 py-2 mx-2 rounded hover:bg-gray-300">Checkout</a>
+    <a id="tabNearby" href="{{ route('hal2') }}" class="px-5 py-2 mx-2 rounded hover:bg-gray-300">Nearby</a>
+    <a id="tabPromotion" href="{{ route('hal3') }}" class="px-5 py-2 mx-2 rounded hover:bg-gray-300">Promotion</a>
+    <a id="tabNewcomers" href="{{ route('hal4') }}" class="px-5 py-2 mx-2 rounded hover:bg-gray-300">Newcomers</a>
+    <a id="tabBestSeller" href="{{ route('hal5') }}" class="px-5 py-2 mx-2 rounded hover:bg-gray-300">Best Seller</a>
+</nav>
 
             <!-- Food List -->
-            <section class="flex flex-wrap justify-center gap-5 p-5">
-                <div class="food-item bg-white p-3 rounded-lg shadow hover:scale-105 transition-transform text-center">
-                    <img src="asset/Corndog.jpg" alt="Corndog" class="w-40 h-auto rounded-lg mb-2">
-                    <p>Corndog - Rp.16.000</p>
+            <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 p-6 bg-gray-50">
+                <div class="food-item bg-white p-5 rounded-lg shadow-lg hover:shadow-xl transition-transform text-center">
+                    <img src="{{ asset('asset/Corndog.jpg') }}" alt="Foto makanan Corndog" class="w-40 h-auto rounded-lg mb-4 shadow">
+                    <p class="text-lg font-bold text-gray-800">Corndog</p>
+                    <p class="text-gray-600">Rp.16.000</p>
                 </div>
-                <div class="food-item bg-white p-3 rounded-lg shadow hover:scale-105 transition-transform text-center">
-                    <img src="asset/ayam.jpg" alt="Ayam" class="w-40 h-auto rounded-lg mb-2">
-                    <p>Ayam goreng - Rp.15.000</p>
+                <div class="food-item bg-white p-5 rounded-lg shadow-lg hover:shadow-xl transition-transform text-center">
+                    <img src="{{ asset('asset/ayam.jpg') }}" alt="Foto ayam goreng" class="w-40 h-auto rounded-lg mb-4 shadow">
+                    <p class="text-lg font-bold text-gray-800">Ayam goreng</p>
+                    <p class="text-gray-600">Rp.15.000</p>
                 </div>
-                <div class="food-item bg-white p-3 rounded-lg shadow hover:scale-105 transition-transform text-center">
-                    <img src="asset/iga.jpg" alt="Iga" class="w-40 h-auto rounded-lg mb-2">
-                    <p>Iga - Rp.20.000</p>
+                <div class="food-item bg-white p-5 rounded-lg shadow-lg hover:shadow-xl transition-transform text-center">
+                    <img src="{{ asset('asset/iga.jpg') }}" alt="Foto makanan Iga" class="w-40 h-auto rounded-lg mb-4 shadow">
+                    <p class="text-lg font-bold text-gray-800">Iga</p>
+                    <p class="text-gray-600">Rp.20.000</p>
                 </div>
-                <div class="food-item bg-white p-3 rounded-lg shadow hover:scale-105 transition-transform text-center">
-                    <img src="asset/steak.jpg" alt="Steak" class="w-40 h-auto rounded-lg mb-2">
-                    <p>Steak - Rp.40.000</p>
+                <div class="food-item bg-white p-5 rounded-lg shadow-lg hover:shadow-xl transition-transform text-center">
+                    <img src="{{ asset('asset/steak.jpg') }}" alt="Foto makanan Steak" class="w-40 h-auto rounded-lg mb-4 shadow">
+                    <p class="text-lg font-bold text-gray-800">Steak</p>
+                    <p class="text-gray-600">Rp.40.000</p>
                 </div>
             </section>
         </main>
     </div>
-    <script src="java.js"></script>
 </body>
 </html>

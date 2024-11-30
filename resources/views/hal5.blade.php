@@ -25,21 +25,21 @@
             </header>
 
             <!-- Banner -->
-            <section class="relative flex justify-center items-center p-5">
-                <div class="absolute top-5 left-5 bg-red-500 text-white py-1 px-3 rounded text-lg">
-                    30% Off
-                </div>
-                <img src="asset/download (29).jpeg" alt="Burger" class="w-full max-w-md rounded-lg">
-            </section>
+<section class="relative flex justify-center items-center p-5">
+    <img src="{{ asset('asset/burger.jpeg') }}" alt="Burger Promo" class="w-full max-w-md rounded-lg">
+</section>
+
 
             <!-- Tabs -->
-            <nav class="flex justify-center bg-gray-300 py-3 space-x-4">
-                <a href="hal1.html" class="px-5 py-2 rounded hover:bg-gray-400">Checkout</a>
-                <a href="hal2.html" class="px-5 py-2 rounded hover:bg-gray-400">Nearby</a>
-                <a href="hal3.html" class="px-5 py-2 rounded hover:bg-gray-400">Promotion</a>
-                <a href="hal4.html" class="px-5 py-2 rounded hover:bg-gray-400">Newcomers</a>
-                <a href="hal5.html" class="px-5 py-2 rounded bg-gray-800 text-white">Best Seller</a>
-            </nav>
+
+            <nav class="flex justify-center bg-gray-200 py-3">
+    <a id="tabCheckout" href="{{ route('hal1') }}" class="px-5 py-2 mx-2 rounded hover:bg-gray-300">Checkout</a>
+    <a id="tabNearby" href="{{ route('hal2') }}" class="px-5 py-2 mx-2 rounded hover:bg-gray-300">Nearby</a>
+    <a id="tabPromotion" href="{{ route('hal3') }}" class="px-5 py-2 mx-2 rounded hover:bg-gray-300">Promotion</a>
+    <a id="tabNewcomers" href="{{ route('hal4') }}" class="px-5 py-2 mx-2 rounded hover:bg-gray-300">Newcomers</a>
+    <a id="tabBestSeller" href="{{ route('hal5') }}" class="px-5 py-2 mx-2 rounded hover:bg-gray-300">Best Seller</a>
+</nav>
+
 
             <!-- Food List -->
             <section class="flex flex-wrap justify-center gap-5 p-5">
@@ -52,7 +52,7 @@
                     <p>Corndog - Rp.15.000</p>
                 </div>
                 <div class="food-item bg-white p-3 rounded-lg shadow hover:scale-105 transition-transform text-center">
-                    <img src="asset/tacps.jpg" alt="Tacos" class="w-40 h-auto rounded-lg mb-2">
+                    <img src="asset/tacos.jpg" alt="Tacos" class="w-40 h-auto rounded-lg mb-2">
                     <p>Taco's - Rp.20.000</p>
                 </div>
                 <div class="food-item bg-white p-3 rounded-lg shadow hover:scale-105 transition-transform text-center">

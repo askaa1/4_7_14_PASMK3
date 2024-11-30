@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,31 +14,36 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/login', function () {
+Route::get('/', function () {
     return view('login');
 });
 
 
-Route::get('/', function () {
+Route::get('/hal1', function () {
     return view('hal1');
 });
 
-Route::get('/', function () {
+Route::get('/hal2', function () {
     return view('hal2');
 });
 
-Route::get('/', function () {
+Route::get('/hal3', function () {
     return view('hal3');
 });
 
-Route::get('/', function () {
+Route::get('/hal4', function () {
     return view('hal4');
 });
 
-Route::get('/', function () {
+Route::get('/hal5', function () {
     return view('hal5');
 });
 
-Route::get('/', function () {
-    return view('hal6');
-});
+
+Route::get("/",[HomeController::class, 'login'])->name("login");
+Route::get('/hal1', [HomeController::class, 'hal1'])->name('hal1');
+Route::get('/hal2', [HomeController::class, 'hal2'])->name('hal2');
+Route::get('/hal3', [HomeController::class, 'hal3'])->name('hal3');
+Route::get('/hal4', [HomeController::class, 'hal4'])->name('hal4');
+Route::get('/hal5', [HomeController::class, 'hal5'])->name('hal5');
+

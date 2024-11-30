@@ -40,12 +40,11 @@
 
             <!-- Tabs -->
             <nav class="flex justify-center bg-gray-100 py-2 space-x-4">
-                <a href="hal1.html" class="px-4 py-2 rounded hover:bg-gray-200">Checkout</a>
-                <a href="hal2.html" class="px-4 py-2 rounded bg-gray-800 text-white">Nearby</a>
-                <a href="hal3.html" class="px-4 py-2 rounded hover:bg-gray-200">Promotion</a>
-                <a href="hal4.html" class="px-4 py-2 rounded hover:bg-gray-200">Newcomers</a>
-                <a href="hal5.html" class="px-4 py-2 rounded hover:bg-gray-200">Best Seller</a>
-            </nav>
+            <a href="{{ route('hal1') }}" class="px-5 py-2 mx-2 rounded hover:bg-gray-300">Checkout</a>
+                <a href="{{ route('hal2') }}" class="px-5 py-2 mx-2 rounded hover:bg-gray-300">Nearby</a>
+                <a href="{{ route('hal3') }}" class="px-5 py-2 mx-2 rounded hover:bg-gray-300">Promotion</a>
+                <a href="{{ route('hal4') }}" class="px-5 py-2 mx-2 rounded hover:bg-gray-300">Newcomers</a>
+                <a href="{{ route('hal5') }}" class="px-5 py-2 mx-2 rounded bg-gray-800 text-white">Best Seller</a>
 
             <!-- Food List -->
             <section class="flex flex-wrap justify-center gap-6 p-5">

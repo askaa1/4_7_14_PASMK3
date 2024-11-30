@@ -11,9 +11,9 @@
         <!-- Sidebar -->
         <aside class="bg-gray-800 flex flex-col items-center py-2">
             <div class="menu space-y-5">
-                <div class="icon text-white text-2xl cursor-pointer">🏠</div>
-                <div class="icon text-white text-2xl cursor-pointer">👤</div>
-                <div class="icon text-white text-2xl cursor-pointer">⭐</div>
+                <div class="icon text-white text-2xl cursor-pointer hover:text-gray-300 transition">🏠</div>
+                <div class="icon text-white text-2xl cursor-pointer hover:text-gray-300 transition">👤</div>
+                <div class="icon text-white text-2xl cursor-pointer hover:text-gray-300 transition">⭐</div>
             </div>
         </aside>
 
@@ -25,69 +25,145 @@
             </header>
 
             <!-- Banner -->
-            <section class="relative flex justify-end items-center p-5">
-                <div class="absolute top-5 left-5 bg-red-500 text-white py-1 px-3 rounded text-lg">
-                    30% Off
-                </div>
-                <img src="asset/download (29).jpeg" alt="Burger" class="w-full max-w-md rounded-lg">
-            </section>
+<section class="relative flex justify-center items-center p-5">
+    <img src="{{ asset('asset/burger.jpeg') }}" alt="Burger Promo" class="w-full max-w-md rounded-lg">
+</section>
+
 
             <!-- Tabs -->
+
             <nav class="flex justify-center bg-gray-200 py-3">
-                <a href="hal1.html" class="px-5 py-2 mx-2 rounded hover:bg-gray-300">Checkout</a>
-                <a href="hal2.html" class="px-5 py-2 mx-2 rounded hover:bg-gray-300">Nearby</a>
-                <a href="hal3.html" class="px-5 py-2 mx-2 rounded hover:bg-gray-300">Promotion</a>
-                <a href="hal4.html" class="px-5 py-2 mx-2 rounded hover:bg-gray-300">Newcomers</a>
-                <a href="hal5.html" class="px-5 py-2 mx-2 rounded bg-gray-800 text-white">Best Seller</a>
-            </nav>
+    <a id="tabCheckout" href="{{ route('hal1') }}" class="px-5 py-2 mx-2 rounded hover:bg-gray-300">Checkout</a>
+    <a id="tabNearby" href="{{ route('hal2') }}" class="px-5 py-2 mx-2 rounded hover:bg-gray-300">Nearby</a>
+    <a id="tabPromotion" href="{{ route('hal3') }}" class="px-5 py-2 mx-2 rounded hover:bg-gray-300">Promotion</a>
+    <a id="tabNewcomers" href="{{ route('hal4') }}" class="px-5 py-2 mx-2 rounded hover:bg-gray-300">Newcomers</a>
+    <a id="tabBestSeller" href="{{ route('hal5') }}" class="px-5 py-2 mx-2 rounded hover:bg-gray-300">Best Seller</a>
+</nav>
+
 
             <!-- Food List -->
-            <section class="flex flex-wrap justify-center gap-5 p-5">
-                <div class="food-item hover:scale-105 transition-transform">
-                    <img src="asset/spageti.jpg" alt="Spaghetti" class="w-40 h-24 object-cover rounded-lg shadow">
-                    <p class="mt-2 text-center">Spaghetti - Rp.26.000</p>
-                </div>
-                <div class="food-item hover:scale-105 transition-transform">
-                    <img src="asset/Pizza.jpg" alt="Pizza" class="w-40 h-24 object-cover rounded-lg shadow">
-                    <p class="mt-2 text-center">Pizza Super - Rp.30.000</p>
-                </div>
-                <div class="food-item hover:scale-105 transition-transform">
-                    <img src="asset/tacps.jpg" alt="Tacos" class="w-40 h-24 object-cover rounded-lg shadow">
-                    <p class="mt-2 text-center">Taco's - Rp.20.000</p>
-                </div>
-                <div class="food-item hover:scale-105 transition-transform">
-                    <img src="asset/syahwarma.jpg" alt="Shawarma" class="w-40 h-24 object-cover rounded-lg shadow">
-                    <p class="mt-2 text-center">Shawarma - Rp.20.000</p>
-                </div>
-                <div class="food-item hover:scale-105 transition-transform">
-                    <img src="asset/beef steak.jpg" alt="Beef Steak" class="w-40 h-24 object-cover rounded-lg shadow">
-                    <p class="mt-2 text-center">Beef Steak - Rp.30.000</p>
-                </div>
-            </section>
+            <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 p-5">
+    <div class="food-item hover:scale-105 transition-transform flex flex-col items-center text-center p-3 bg-white rounded-lg shadow" data-food="Spaghetti - Rp.26.000" data-price="26000">
+        <img src="{{ asset('asset/Spaghetti.jpeg') }}" alt="Spaghetti with sauce" onerror="this.src='{{ asset('asset/placeholder.jpg') }}'" class="w-32 h-32 object-cover rounded-lg mb-3">
+        <p class="text-lg font-semibold text-gray-800">Spaghetti - Rp.26.000</p>
+        <button class="add-to-order py-1 px-3 bg-blue-500 text-white rounded w-full mt-3">Add to Order</button>
+    </div>
+    <div class="food-item hover:scale-105 transition-transform flex flex-col items-center text-center p-3 bg-white rounded-lg shadow" data-food="Pizza Super - Rp.30.000" data-price="30000">
+        <img src="{{ asset('asset/Pizza.jpg') }}" alt="Delicious Pizza Super" class="w-32 h-32 object-cover rounded-lg mb-3">
+        <p class="text-lg font-semibold text-gray-800">Pizza Super - Rp.30.000</p>
+        <button class="add-to-order py-1 px-3 bg-blue-500 text-white rounded w-full mt-3">Add to Order</button>
+    </div>
+    <div class="food-item hover:scale-105 transition-transform flex flex-col items-center text-center p-3 bg-white rounded-lg shadow" data-food="Taco's - Rp.20.000" data-price="20000">
+        <img src="{{ asset('asset/Tacos.jpg') }}" alt="Tacos" class="w-32 h-32 object-cover rounded-lg mb-3">
+        <p class="text-lg font-semibold text-gray-800">Taco's - Rp.20.000</p>
+        <button class="add-to-order py-1 px-3 bg-blue-500 text-white rounded w-full mt-3">Add to Order</button>
+    </div>
+    <div class="food-item hover:scale-105 transition-transform flex flex-col items-center text-center p-3 bg-white rounded-lg shadow" data-food="Shawarma - Rp.20.000" data-price="20000">
+        <img src="{{ asset('asset/Syahwarma.jpg') }}" alt="Shawarma" class="w-32 h-32 object-cover rounded-lg mb-3">
+        <p class="text-lg font-semibold text-gray-800">Shawarma - Rp.20.000</p>
+        <button class="add-to-order py-1 px-3 bg-blue-500 text-white rounded w-full mt-3">Add to Order</button>
+    </div>
+    <div class="food-item hover:scale-105 transition-transform flex flex-col items-center text-center p-3 bg-white rounded-lg shadow" data-food="Beef Steak - Rp.30.000" data-price="30000">
+        <img src="{{ asset('asset/beef steak.jpg') }}" alt="Beef Steak" class="w-32 h-32 object-cover rounded-lg mb-3">
+        <p class="text-lg font-semibold text-gray-800">Beef Steak - Rp.30.000</p>
+        <button class="add-to-order py-1 px-3 bg-blue-500 text-white rounded w-full mt-3">Add to Order</button>
+    </div>
+</section>
+
         </main>
 
         <!-- Orders -->
         <aside class="bg-white p-5 shadow flex flex-col">
             <h3 class="mb-3 text-lg font-semibold">My Orders</h3>
+
+            <!-- Daftar Pesanan -->
+            <div id="orderList" class="mb-5">
+                <p class="text-gray-500">No items in your order.</p>
+            </div>
+
+            <!-- Total Harga -->
+            <div class="total-price bg-gray-50 p-3 border border-gray-300 rounded mb-5">
+                <p class="font-semibold">Total: <span id="totalPrice">Rp.0</span></p>
+            </div>
+
+            <!-- Alamat Pengiriman -->
             <div class="delivery-info bg-gray-50 p-3 border border-gray-300 rounded mb-5">
-                <p>Delivery Address</p>
-                <p class="font-semibold">1341 MORRIS STREET</p>
-                <p>40 mins | 4 kms</p>
+                <label for="deliveryAddress" class="block text-sm text-gray-700 font-semibold">Delivery Address</label>
+                <input type="text" id="deliveryAddress" placeholder="Enter your address here" class="p-2 mb-3 border border-gray-300 rounded w-full">
             </div>
-            <div class="order-item flex items-center mb-3">
-                <img src="asset/Delicious Burger.jpeg" alt="Burger" class="w-12 h-12 object-cover rounded mr-3">
-                <p class="flex-grow">Burger Mozza - Rp.25.000</p>
-                <input type="number" value="1" min="1" class="w-16 p-1 border border-gray-300 rounded">
-            </div>
-            <div class="order-item flex items-center mb-3">
-                <img src="asset/Pizza.jpg" alt="Pizza" class="w-12 h-12 object-cover rounded mr-3">
-                <p class="flex-grow">Pizza Super Supreme - Rp.30.000</p>
-                <input type="number" value="1" min="1" class="w-16 p-1 border border-gray-300 rounded">
-            </div>
-            <input type="text" placeholder="Enter Promotion" class="p-2 mb-3 border border-gray-300 rounded">
-            <button class="py-2 bg-gray-800 text-white rounded hover:bg-gray-600 transition">Add Coupon</button>
-            <button class="py-2 bg-gray-800 text-white rounded hover:bg-gray-600 transition mt-3">Check Out</button>
+
+            <!-- Tombol Save Address -->
+            <button id="saveAddressButton" class="py-2 bg-blue-600 text-white rounded hover:bg-blue-500 transition w-full">Save Address</button>
+
+            <!-- Tombol Check Out -->
+            <button id="checkoutButton" class="py-2 bg-gray-800 text-white rounded hover:bg-gray-600 transition mt-3 w-full" disabled>Check Out</button>
         </aside>
     </div>
+
+    <script>
+        // Manage the order list
+        let totalPrice = 0;
+        let orderItems = [];
+
+        const addButtons = document.querySelectorAll('.add-to-order');
+        addButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                const foodName = e.target.closest('.food-item').dataset.food;
+                const price = parseInt(e.target.closest('.food-item').dataset.price);
+
+                orderItems.push({ name: foodName, price });
+                totalPrice += price;
+
+                updateOrderList();
+                updateTotalPrice();
+                enableCheckoutButton();
+            });
+        });
+
+        // Update order list UI
+        function updateOrderList() {
+            const orderListElement = document.getElementById('orderList');
+            if (orderItems.length > 0) {
+                orderListElement.innerHTML = orderItems.map(item => `<p>${item.name} - Rp.${item.price}</p>`).join('');
+            } else {
+                orderListElement.innerHTML = '<p class="text-gray-500">No items in your order.</p>';
+            }
+        }
+
+        // Update total price
+        function updateTotalPrice() {
+            document.getElementById('totalPrice').innerText = `Rp.${totalPrice}`;
+        }
+
+        // Enable checkout button if there are items
+        function enableCheckoutButton() {
+            const checkoutButton = document.getElementById('checkoutButton');
+            checkoutButton.disabled = orderItems.length === 0;
+        }
+
+        // Save address
+        document.getElementById('saveAddressButton').addEventListener('click', () => {
+            const address = document.getElementById('deliveryAddress').value.trim();
+            if (address) {
+                alert("Address saved: " + address);
+            } else {
+                alert("Please enter a valid address.");
+            }
+        });
+
+        // Checkout functionality
+        document.getElementById('checkoutButton').addEventListener('click', () => {
+            // Empty the order list after checkout
+            orderItems = [];
+            totalPrice = 0;
+
+            // Update UI
+            updateOrderList();
+            updateTotalPrice();
+            enableCheckoutButton();
+
+            alert('Order successfully checked out!');
+        });
+    </script>
 </body>
 </html>
